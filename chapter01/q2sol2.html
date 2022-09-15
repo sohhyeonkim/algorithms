@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer = 'YES',
+          max;
+        // 가장 긴 변 구하기
+        if (a > b) max = a;
+        else {
+          max = b;
+        }
+        if (max < c) max = c;
+        // 가장 긴 변의 길이는 나머지 두 변의 합보다 작아야한다.
+        if (max >= a + b + c - max) answer = 'NO';
+        return answer;
+      }
+
+      console.log(solution(13, 33, 17));
+    </script>
+  </body>
+</html>
