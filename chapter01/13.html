@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer="";
+                for(letter of s) {
+                    if(letter.charCodeAt() >=65 && letter.charCodeAt() <=90) {
+                        answer += letter.toLowerCase();
+                    } else {
+                        answer += letter.toUpperCase();
+                    }
+                }
+                return answer;
+            }
+
+            console.log(solution("StuDY"));
+        </script>
+    </body>
+</html>
