@@ -7,13 +7,19 @@
         <script>
             function solution(s){  
                 let answer="";
-                for(letter of s) {
-                    if(letter.charCodeAt() >=65 && letter.charCodeAt() <=90) {
-                        answer += letter.toLowerCase();
-                    } else {
+                for(const letter of s) {
+                    if(letter === letter.toUpperCase()) answer += letter.toLowerCase();
+                    else {
                         answer += letter.toUpperCase();
                     }
                 }
+                // for(letter of s) {
+                //     if(letter.charCodeAt() >=65 && letter.charCodeAt() <=90) {
+                //         answer += letter.toLowerCase();
+                //     } else {
+                //         answer += letter.toUpperCase();
+                //     }
+                // }
                 return answer;
             }
 
