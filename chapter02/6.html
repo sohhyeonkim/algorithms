@@ -9,22 +9,25 @@
         let answer = Number.MIN_SAFE_INTEGER;
         let rowSum = 0;
         let columnSum = 0;
-        let diagonalSum = 0;
+        let diagonal1Sum = 0;
+        let diagonal2Sum = 0;
         for (let i = 0; i < arr.length; i++) {
           for (let j = 0; j < arr[0].length; j++) {
             rowSum += arr[i][j];
             columnSum += arr[j][i];
-            if (i === j) diagonalSum += arr[i][j];
           }
-          answer =
-            answer < Math.max(rowSum, columnSum)
-              ? Math.max(rowSum, columnSum)
-              : answer;
+          answer = Math.max(answer, rowSum, columnSum);
+
           rowSum = 0;
           columnSum = 0;
-          console.log('answer', answer);
         }
-        answer = Math.max(answer, diagonalSum);
+
+        for (let i = 0; i < arr.length; i++) {
+          diagonal1Sum += arr[i][i];
+          diagonal2Sum += arr[i][arr.length - 1 - i];
+        }
+
+        answer = Math.max(answer, diagonal1Sum, diagonal2Sum);
         return answer;
       }
 
