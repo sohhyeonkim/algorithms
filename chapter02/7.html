@@ -7,6 +7,34 @@
     <script>
       function solution(arr) {
         let answer = 0;
+        const copied = [...arr];
+        const zeros = new Array(copied[0].length + 2).fill(0);
+
+        const mapped = copied.map((row) => {
+          row.unshift(0);
+          row.push(0);
+          return row;
+        });
+        mapped.unshift(zeros);
+        mapped.push(zeros);
+        console.log('mapped', mapped);
+
+        for (let i = 1; i <= arr.length; i++) {
+          for (let j = 1; j <= arr.length; j++) {
+            if (
+              mapped[i][j] ===
+              Math.max(
+                mapped[i][j],
+                mapped[i - 1][j],
+                mapped[i][j - 1],
+                mapped[i + 1][j],
+                mapped[i][j + 1]
+              )
+            ) {
+              answer++;
+            }
+          }
+        }
 
         return answer;
       }
