@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = 'YES';
+        const n = s.length;
+        for (let i = 0; i < Math.floor(n / 2); i++) {
+          if (s[i].toLowerCase() !== s[n - 1 - i].toLowerCase()) {
+            answer = 'NO';
+            break;
+          }
+        }
+        return answer;
+      }
+
+      let str = 'goooG';
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
+<!-- 
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {}
+
+      let str = 'gooG';
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
