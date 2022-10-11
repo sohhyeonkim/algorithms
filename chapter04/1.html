@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer;
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let i = 0; i < n; i++) {
+          const splitted = arr[i].toString().split('');
+          let sum = 0;
+          for (let j = 0; j < splitted.length; j++) {
+            sum += Number.parseInt(splitted[j]);
+          }
+
+          if (max < sum) {
+            answer = Number.parseInt(splitted.join(''));
+            max = sum;
+          }
+          if (max === sum) {
+            answer = Math.max(max, Number.parseInt(splitted.join('')));
+          }
+          sum = 0;
+        }
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
+
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer;
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html> -->

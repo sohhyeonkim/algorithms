@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
   <head>
     <meta charset="UTF-8" />
     <title>출력결과</title>
@@ -21,8 +21,8 @@
       console.log(solution(str));
     </script>
   </body>
-</html>
-<!-- 
+</html> -->
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -30,10 +30,14 @@
   </head>
   <body>
     <script>
-      function solution(s) {}
+      function solution(s) {
+        s = s.toLowerCase();
+        if (s !== s.split('').reverse().join('')) return 'NO';
+        return 'YES';
+      }
 
       let str = 'gooG';
       console.log(solution(str));
     </script>
   </body>
-</html> -->
+</html>
