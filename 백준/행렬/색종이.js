@@ -11,7 +11,7 @@ let input = fs
 const count = Number(input.shift());
 
 let area = 0;
-const box = Array.from(new Array(100), () => Array(100).fill(0));
+const box = Array.from({ length: 100 }, () => new Array(100).fill(0));
 for (let i = 0; i < count; i++) {
   const row = +input[i][0];
   const col = +input[i][1];

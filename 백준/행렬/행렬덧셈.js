@@ -1,7 +1,7 @@
 const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
+// const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
-// const filePath = './input.txt';
+const filePath = './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
 const [row, column] = input.shift().split(' ');
 const matrix = input.map((el) => el.split(' '));
@@ -16,11 +16,9 @@ for (let i = 0; i < matrix.length; i++) {
   }
 }
 
-const result = [];
-for (let i = 0; i < row; i++) {
-  const arr = new Array();
-  result.push(arr);
-}
+const result = Array.from({ length: row }, () =>
+  new Array(Number(column)).fill(0)
+);
 
 for (let i = 0; i < row; i++) {
   for (let j = 0; j < column; j++) {
