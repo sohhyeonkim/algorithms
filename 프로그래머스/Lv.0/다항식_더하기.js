@@ -49,3 +49,12 @@ function solution(polynomial) {
 
   return answer.join(' + ');
 }
+
+/**
+ * xNum은 일차항의 합을 저장한다. (variableSum)
+ * 일차항이 'x'인 경우, 'x'를 빈 문자열로 replace하고 || 연산자로 1을 할당한다.
+ * num에는 !isNaN(n)인 상수항(즉, 숫자인 값들)의 합을 저장한다. (constantsSum)
+ * xNum이 1인 경우는 빈 문자열을, 1이 아닌 경우 `${xNum}x`를 배열 answer에 push한다.
+ * answer 배열을 ' + '로 조인해서 리턴한다.
+ * 배열 요소가 하나인 경우에는 바로 리턴되어, 내가 작성한 코드처럼 분기를 나누어주지 않아도 된다.
+ */

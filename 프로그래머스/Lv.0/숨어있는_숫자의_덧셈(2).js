@@ -22,8 +22,12 @@ function solution(my_string) {
 // 다른 분의 풀이
 function solution(my_string) {
   return my_string
-    .replace(/[A-z]/g, ' ')
+    .replace(/[a-z]/gi, ' ')
     .split(' ')
     .map((v) => v * 1)
     .reduce((a, b) => a + b);
 }
+
+/**
+ * [a-z]/gi는 주어진 문자열에서 모든 알파벳을 ' '으로 replace한다. g는 global, i는 case insensitive로, 소문자 뿐만 아니라 대문자도 공백으로 변경한다.
+ */
